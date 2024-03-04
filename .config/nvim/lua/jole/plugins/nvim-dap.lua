@@ -10,7 +10,7 @@ return {
             type = "server",
             port = "${port}",
             executable = {
-                command = "/home/jole/.local/share/codelldb/extension/adapter/codelldb",
+                command = "/home/laurin/.local/share/codelldb/extension/adapter/codelldb",
                 args = { "--port", "${port}" },
             },
         }

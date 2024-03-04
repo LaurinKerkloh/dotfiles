@@ -1,7 +1,7 @@
 [init]
 	defaultBranch = main
 [user]
-	name = Jonas Weber
-	email = jonas@jole.dev
+    name = Laurin Kerkloh
+    email = laurin@kerk-loh.de
 [pull]
     rebase = false
