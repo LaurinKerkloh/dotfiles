@@ -18,29 +18,7 @@ separator_fg = "auto"
 
 [[block]]
 block = "disk_space"
-if_command = "hostname | grep -q 'jolepc'"
 format = " / $icon $available "
-
-[[block]]
-block = "disk_space"
-if_command = "hostname | grep -q 'jolelaptop'"
-format = " / $icon $available "
-
-[[block]]
-block = "disk_space"
-if_command = "hostname | grep -q 'jolepc'"
-format = " /mnt/ssd $icon $available "
-path = "/mnt/ssd"
-
-[[block]]
-block = "disk_space"
-if_command = "hostname | grep -q 'jolepc'"
-format = " /mnt/hdd $icon $available "
-path = "/mnt/hdd"
-
-[[block]]
-block = "backlight"
-if_command = "hostname | grep -q 'jolelaptop'"
 
 [[block]]
 block = "sound"
@@ -48,10 +26,6 @@ max_vol = 100
 [[block.click]]
 button = "left"
 cmd = "pavucontrol"
-
-[[block]]
-block = "battery"
-if_command = "hostname | grep -q 'jolelaptop'"
 
 [[block]]
 block = "time"
