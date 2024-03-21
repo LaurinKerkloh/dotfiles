@@ -50,6 +50,12 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 bindsym XF86MonBrightnessUp exec xbacklight +10
 bindsym XF86MonBrightnessDown exec xbacklight -10
 
+# Audio control
+bindsym XF86AudioPlay exec playerctl play-pause
+bindsym XF86AudioPause exec playerctl pause
+bindsym XF86AudioNext exec playerctl next
+bindsym XF86AudioPrev exec playerctl previous
+
 # Screenshots
 bindsym Print exec --no-startup-id maim "/$HOME/Downloads/$(date +'%Y_%m_%dT%H_%M_%S_%4N').png"
 bindsym $mod+Print exec --no-startup-id maim --window $(xdotool getactivewindow) "/$HOME/Downloads/$(date +'%Y_%m_%dT%H_%M_%S_%4N').png"
@@ -186,7 +192,7 @@ exec --no-startup-id i3-msg 'workspace 10; append_layout ~/.config/i3/layout/10.
 exec --no-startup-id dunst
 exec --no-startup-id redshift-gtk
 exec --no-startup-id alacritty
-exec --no-startup-id firefox
+exec --no-startup-id sleep 3 && firefox
 exec --no-startup-id thunderbird
 exec --no-startup-id keepassxc
 
