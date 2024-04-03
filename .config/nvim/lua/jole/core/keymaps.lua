@@ -1,9 +1,3 @@
--- Diagnostics
-vim.keymap.set("n", "<leader>d", vim.diagnostic.open_float, { desc = "Open diagnostics" })
-vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, { desc = "Go to previous diagnostic" })
-vim.keymap.set("n", "]d", vim.diagnostic.goto_next, { desc = "Go to next diagnostic" })
-vim.keymap.set("n", "<leader>q", vim.diagnostic.setloclist, { desc = "Set location list" })
-
 -- Center view when navigating
 vim.keymap.set("n", "n", "nzzzv", { desc = "Move to next match and center view" })
 vim.keymap.set("n", "N", "Nzzzv", { desc = "Move to previous match and center view" })
@@ -22,3 +16,18 @@ vim.keymap.set("v", "<M-k>", ":m '<-2<cr>gv=gv", { desc = "Move selection up" })
 
 -- tmux-sessionizer
 vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>", { desc = "Open tmux-sessionizer" })
+
+-- Other keymaps
+vim.keymap.set("n", "<leader>n", function()
+    -- Don't do anything if we are already in the file explorer
+    if vim.api.nvim_buf_get_option(0, "filetype") == "netrw" then
+        return
+    end
+
+    -- Otherwise, open the file explorer and search/select the current file
+    local current_file_name = vim.fn.expand("%:p:t")
+    vim.cmd.Explore()
+    if current_file_name then
+        vim.fn.search(current_file_name)
+    end
+end, { desc = "Open file explorer" })
