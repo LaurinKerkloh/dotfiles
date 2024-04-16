@@ -197,6 +197,7 @@ exec --no-startup-id i3-msg 'workspace 10; append_layout ~/.config/i3/layout/10.
 # autostart
 exec --no-startup-id dunst
 exec --no-startup-id redshift-gtk
+
 exec --no-startup-id alacritty
 exec --no-startup-id sleep 3 && firefox
 exec --no-startup-id thunderbird
