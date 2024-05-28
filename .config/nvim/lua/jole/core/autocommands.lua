@@ -23,3 +23,11 @@ vim.api.nvim_create_autocmd("FileType", {
         vim.cmd.setlocal({ "indentkeys-=." })
     end,
 })
+
+-- Set Commentstring for openscad
+vim.api.nvim_create_autocmd("FileType", {
+    pattern = { "openscad" },
+    callback = function()
+        require("Comment.ft").set("openscad", "// %s")
+    end,
+})
