@@ -24,6 +24,13 @@ vim.api.nvim_create_autocmd("FileType", {
     end,
 })
 
+-- Set filetype to ruby for thor files
+vim.api.nvim_create_autocmd({"BufNewFile", "BufRead"}, {
+    pattern = { "*.thor" },
+    callback = function()
+        vim.bo.filetype = "ruby"
+    end,
+})
 -- Set Commentstring for openscad
 vim.api.nvim_create_autocmd("FileType", {
     pattern = { "openscad" },
