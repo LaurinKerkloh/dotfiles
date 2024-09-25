@@ -34,7 +34,8 @@ return {
                 ["<C-y>"] = cmp.mapping.confirm({ select = true }),
             }),
             sources = cmp.config.sources({
-                { name = "nvim_lsp" },
+                { name = "lazydev" },
+                { name = "nvim_lsp", max_item_count = 20 },
                 { name = "luasnip" },
             }, {
                 { name = "buffer" },
