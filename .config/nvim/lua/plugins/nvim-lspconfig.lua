@@ -97,11 +97,6 @@ return {
             },
         })
 
-        -- lspconfig.solargraph.setup({
-        --     capabilities = capabilities,
-        --     on_attach = on_attach,
-        -- })
-
         lspconfig.sqls.setup({
             capabilities = capabilities,
             on_attach = function(client, bufnr)
@@ -113,10 +108,10 @@ return {
             end,
         })
 
-        -- lspconfig.stimulus_ls.setup({
-        --     capabilities = capabilities,
-        --     on_attach = on_attach,
-        -- })
+        lspconfig.stimulus_ls.setup({
+            capabilities = capabilities,
+            on_attach = on_attach,
+        })
 
         local tailwindcss_default_config = require("lspconfig.server_configurations.tailwindcss").default_config
         lspconfig.tailwindcss.setup({
