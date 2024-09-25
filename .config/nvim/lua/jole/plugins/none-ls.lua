@@ -6,7 +6,8 @@ return {
         null_ls.setup({
             sources = {
                 null_ls.builtins.formatting.erb_format.with({
-                    args = { "--print-width", "120" },
+                    command = { "bundle", "exec", "erb-format" },
+                    extra_args = { "--print-width", "120" },
                 }),
                 -- null_ls.builtins.formatting.topiary.with({
                 --     filetypes = { "eruby", "scm" },

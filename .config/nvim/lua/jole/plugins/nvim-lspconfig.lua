@@ -17,16 +17,14 @@ return {
         local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
         local on_attach = function(client, bufnr)
             -- Format on save
-            if client.supports_method("textDocument/formatting") then
-                vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })
-                vim.api.nvim_create_autocmd("BufWritePre", {
-                    group = augroup,
-                    buffer = bufnr,
-                    callback = function()
-                        vim.lsp.buf.format({ bufnr = bufnr, async = false })
-                    end,
-                })
-            end
+            vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })
+            vim.api.nvim_create_autocmd("BufWritePre", {
+                group = augroup,
+                buffer = bufnr,
+                callback = function()
+                    vim.lsp.buf.format({ bufnr = bufnr, async = false })
+                end,
+            })
         end
 
         -- LSP servers
@@ -78,15 +76,20 @@ return {
             on_attach = on_attach,
         })
 
-        lspconfig.solargraph.setup({
+        lspconfig.ruby_lsp.setup({
             capabilities = capabilities,
             on_attach = on_attach,
+            filetypes = { "ruby", "eruby" },
+            init_options = {
+                formatter = "standard",
+                linters = { "standard" },
+            },
         })
 
-        lspconfig.stimulus_ls.setup({
-            capabilities = capabilities,
-            on_attach = on_attach,
-        })
+        -- lspconfig.stimulus_ls.setup({
+        --     capabilities = capabilities,
+        --     on_attach = on_attach,
+        -- })
 
         lspconfig.texlab.setup({
             capabilities = capabilities,
@@ -119,7 +122,9 @@ return {
 
         -- Global mappings.
         -- See `:help vim.diagnostic.*` for documentation on any of the below functions
-        vim.keymap.set("n", "<leader>e", vim.diagnostic.open_float, { desc = "Open diagnostics float" })
+        -- open diagnostics float with sources of the diagnostics
+        vim.keymap.set("n", "<leader>e", function() vim.diagnostic.open_float(nil, { source = "true" }) end,
+            { desc = "Open diagnostics float" })
         vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, { desc = "Go to previous diagnostic" })
         vim.keymap.set("n", "]d", vim.diagnostic.goto_next, { desc = "Go to next diagnostic" })
         vim.keymap.set("n", "<leader>q", vim.diagnostic.setloclist, { desc = "Set location list" })
