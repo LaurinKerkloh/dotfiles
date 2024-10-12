@@ -1,5 +1,5 @@
 lowercaseKeywords: false
 connections:
-  - alias: postgresql
+  - alias: intern-db
     driver: postgresql
-    dataSourceName: "postgres://postgres:password@localhost/split?sslmode=disable"
+    dataSourceName: "postgres://postgres:password@intern-db/intern?sslmode=disable"
