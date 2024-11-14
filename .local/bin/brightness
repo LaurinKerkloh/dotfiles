@@ -10,30 +10,33 @@ fi
 
 if command -v ddcutil >/dev/null 2>&1; then
   for display in 1 2; do
-    current_brightness=$(ddcutil --display "$display" getvcp 10 | grep -oP 'current value =\s*\K\d+')
-    if [ -z "$current_brightness" ]; then
-      echo "Failed to get current brightness for display $display"
-      continue
-    fi
+    (
+      current_brightness=$(ddcutil --display "$display" getvcp 10 --sleep-multiplier .5 --disable-dynamic-sleep | grep -oP 'current value =\s*\K\d+')
+      if [ -z "$current_brightness" ]; then
+        echo "Failed to get current brightness for display $display"
+        continue
+      fi
 
-    if [[ "$brightness" = "inc" ]]; then
-      new_brightness=$((current_brightness + 50))
-    elif [[ "$brightness" = "dec" ]]; then
-      new_brightness=$((current_brightness - 50))
-    else
-      new_brightness="$brightness"
-    fi
+      if [[ "$brightness" = "inc" ]]; then
+        new_brightness=$((current_brightness + 50))
+      elif [[ "$brightness" = "dec" ]]; then
+        new_brightness=$((current_brightness - 50))
+      else
+        new_brightness="$brightness"
+      fi
 
-    # Ensure brightness is within 0-100
-    if [ "$new_brightness" -lt 0 ]; then
-      new_brightness=0
-    elif [ "$new_brightness" -gt 100 ]; then
-      new_brightness=100
-    fi
+      # Ensure brightness is within 0-100
+      if [ "$new_brightness" -lt 0 ]; then
+        new_brightness=0
+      elif [ "$new_brightness" -gt 100 ]; then
+        new_brightness=100
+      fi
 
-    ddcutil --display "$display" setvcp 10 "$new_brightness" 2>/dev/null
+      ddcutil --display "$display" setvcp 10 "$new_brightness" --sleep-multiplier .5 --disable-dynamic-sleep 2>/dev/null
+
+      notify-send "Display $display: Brightness $new_brightness%"
+    ) &
   done
-  notify-send "Set brightness to $new_brightness"
 else
   if [[ "$brightness" == "inc" ]]; then
     new_brightness="+10"
