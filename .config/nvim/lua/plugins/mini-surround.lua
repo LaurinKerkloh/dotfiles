@@ -1,5 +1,5 @@
 return {
-    "echasnovski/mini.ai",
+    "echasnovski/mini.surround",
     event = "VeryLazy",
     opts = {},
 }

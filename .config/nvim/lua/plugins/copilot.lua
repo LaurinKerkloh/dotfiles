@@ -1,9 +1,11 @@
 return {
     "github/copilot.vim",
+    keys = {
+        { "<C-j>", 'copilot#Accept("<cr>")', mode = "i", desc = "Accept Copilot suggestion", expr = true, replace_keycodes = false },
+    },
+    cmd = "Copilot",
     config = function()
         vim.g.copilot_no_tab_map = true
-        vim.keymap.set("i", "<C-j>", 'copilot#Accept("<CR>")',
-            { desc = "Accept Copilot suggestion", expr = true, replace_keycodes = false })
-        vim.cmd("Copilot disable")
+        vim.cmd([[Copilot disable]])
     end,
 }

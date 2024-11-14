@@ -1,21 +1,24 @@
 return {
     "hrsh7th/nvim-cmp",
     dependencies = {
-        -- nvim-cmp dependencies
-        "neovim/nvim-lspconfig",
         "hrsh7th/cmp-nvim-lsp",
         "hrsh7th/cmp-buffer",
         "hrsh7th/cmp-path",
         "hrsh7th/cmp-cmdline",
-        -- LuaSnip
         "L3MON4D3/LuaSnip",
         "saadparwaiz1/cmp_luasnip",
-        -- cmp-git
-        "petertriho/cmp-git",
-        "nvim-lua/plenary.nvim",
+        {
+            "roobert/tailwindcss-colorizer-cmp.nvim",
+            opts = {
+                color_square_width = 2,
+            },
+        },
     },
+    event = { "InsertEnter", "CmdlineEnter" },
     config = function()
         local cmp = require("cmp")
+        local defaults = require("cmp.config.default")()
+
         cmp.setup({
             snippet = {
                 expand = function(args)
@@ -27,27 +30,27 @@ return {
                 documentation = cmp.config.window.bordered(),
             },
             mapping = cmp.mapping.preset.insert({
-                ["<C-b>"] = cmp.mapping.scroll_docs(-4),
+                ["<C-r>"] = cmp.mapping.scroll_docs(-4),
                 ["<C-f>"] = cmp.mapping.scroll_docs(4),
+                ["<C-n>"] = cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Insert }),
+                ["<C-p>"] = cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Insert }),
                 ["<C-Space>"] = cmp.mapping.complete(),
                 ["<C-e>"] = cmp.mapping.abort(),
                 ["<C-y>"] = cmp.mapping.confirm({ select = true }),
             }),
             sources = cmp.config.sources({
                 { name = "lazydev" },
-                { name = "nvim_lsp", max_item_count = 20 },
+                { name = "nvim_lsp" },
                 { name = "luasnip" },
+                { name = "path" },
             }, {
                 { name = "buffer" },
             }),
-        })
+            sorting = defaults.sorting,
+            formatting = {
+                format = require("tailwindcss-colorizer-cmp").formatter,
+            },
 
-        cmp.setup.filetype("gitcommit", {
-            sources = cmp.config.sources({
-                { name = "git" },
-            }, {
-                { name = "buffer" },
-            }),
         })
 
         cmp.setup.cmdline({ "/", "?" }, {
@@ -66,7 +69,5 @@ return {
             }),
             matching = { disallow_symbol_nonprefix_matching = false },
         })
-
-        require("cmp_git").setup()
     end,
 }

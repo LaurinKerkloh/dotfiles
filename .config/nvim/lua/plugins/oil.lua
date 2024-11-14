@@ -16,22 +16,21 @@ end
 return {
     "stevearc/oil.nvim",
     dependencies = {
-        {
-            "nvim-tree/nvim-web-devicons",
-            opts = {},
-        },
+        "nvim-tree/nvim-web-devicons",
+    },
+    lazy = false,
+    keys = {
+        { "<leader>n", "<cmd>Oil<cr>", desc = "Open oil" },
     },
     opts = {
+        default_file_explorer = true,
+        skip_confirm_for_simple_edits = true,
         win_options = {
             winbar = "%!v:lua.get_oil_winbar()",
         },
         view_options = {
             show_hidden = true,
+            natural_order = true,
         },
     },
-    config = function(_, opts)
-        require("oil").setup(opts)
-
-        vim.keymap.set("n", "<leader>n", "<cmd>Oil<cr>", { desc = "Open Oil" })
-    end,
 }
