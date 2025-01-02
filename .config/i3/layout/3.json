@@ -1,21 +1,84 @@
 // vim:ts=4:sw=4:et
 {
-  "border": "pixel",
-  "current_border_width": 1,
+  // tabbed split container with 3 children
+  "border": "normal",
   "floating": "auto_off",
-  "geometry": {
-    "height": 1438,
-    "width": 2558,
-    "x": 0,
-    "y": 0
-  },
+  "layout": "tabbed",
   "marks": [],
-  "name": "Inbox - laurin@kerk-loh.de - Mozilla Thunderbird",
   "percent": 1,
-  "swallows": [
+  "type": "con",
+  "nodes": [
     {
-      "class": "^thunderbird$"
+      "border": "pixel",
+      "current_border_width": 1,
+      "floating": "auto_off",
+      "geometry": {
+        "height": 1438,
+        "width": 2558,
+        "x": 0,
+        "y": 0
+      },
+      "marks": [],
+      "name": "Inbox - laurin.kerkloh@reditus.de - Mozilla Thunderbird",
+      "percent": 0.333333333333333,
+      "swallows": [
+        {
+          "class": "^thunderbird$"
+          // "instance": "^Mail$",
+          // "machine": "^laurin\\-pc$",
+          // "title": "^Inbox\\ \\-\\ laurin\\.kerkloh\\@reditus\\.de\\ \\-\\ Mozilla\\ Thunderbird$",
+          // "window_role": "^3pane$"
+        }
+      ],
+      "type": "con"
+    },
+    {
+      "border": "pixel",
+      "current_border_width": 1,
+      "floating": "auto_off",
+      "geometry": {
+        "height": 1411,
+        "width": 1278,
+        "x": 3841,
+        "y": 28
+      },
+      "marks": [],
+      "name": "Signal",
+      "percent": 0.333333333333333,
+      "swallows": [
+        {
+          "class": "^Signal$"
+          // "instance": "^signal$",
+          // "machine": "^laurin\\-pc$",
+          // "title": "^Signal$",
+          // "window_role": "^browser\\-window$"
+        }
+      ],
+      "type": "con"
+    },
+    {
+      "border": "pixel",
+      "current_border_width": 1,
+      "floating": "auto_off",
+      "geometry": {
+        "height": 1411,
+        "width": 1278,
+        "x": 0,
+        "y": 0
+      },
+      "marks": [],
+      "name": "WhatsApp — Mozilla Firefox",
+      "percent": 0.333333333333333,
+      "swallows": [
+        {
+          // "class": "^firefox$",
+          // "instance": "^Navigator$",
+          // "machine": "^laurin\\-pc$",
+          "title": "^WhatsApp\\ \\—\\ Mozilla\\ Firefox$"
+          // "window_role": "^browser$"
+        }
+      ],
+      "type": "con"
     }
-  ],
-  "type": "con"
+  ]
 }

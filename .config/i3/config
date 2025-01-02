@@ -181,16 +181,16 @@ bindsym $mod+w exec firefox
 bindsym $mod+Shift+p exec pkill -USR1 '^redshift$'
 
 # assign workspaces to specific screens
-workspace $ws1 output DP-4
 workspace $ws3 output DP-4
-workspace $ws2 output DP-2
+workspace $ws1 output DP-4
 workspace $ws10 output DP-2
+workspace $ws2 output DP-2
 
 # load layouts
-exec --no-startup-id i3-msg 'workspace 1; append_layout ~/.config/i3/layout/1.json'
-exec --no-startup-id i3-msg 'workspace 2; append_layout ~/.config/i3/layout/2.json'
 exec --no-startup-id i3-msg 'workspace 3; append_layout ~/.config/i3/layout/3.json'
+exec --no-startup-id i3-msg 'workspace 1; append_layout ~/.config/i3/layout/1.json'
 exec --no-startup-id i3-msg 'workspace 10; append_layout ~/.config/i3/layout/10.json'
+exec --no-startup-id i3-msg 'workspace 2; append_layout ~/.config/i3/layout/2.json'
 
 # autostart
 exec --no-startup-id $HOME/.config/i3/scripts/wallpaper.sh
@@ -198,8 +198,10 @@ exec --no-startup-id dunst
 exec --no-startup-id redshift-gtk
 
 exec --no-startup-id alacritty
+exec --no-startup-id signal-desktop
 exec --no-startup-id sleep 3 && firefox
-exec --no-startup-id thunderbird
+exec --no-startup-id sleep 4 && firefox -new-window "https://web.whatsapp.com"
+exec --no-startup-id sleep 3 && thunderbird
 exec --no-startup-id keepassxc
 
 # reload the configuration file
