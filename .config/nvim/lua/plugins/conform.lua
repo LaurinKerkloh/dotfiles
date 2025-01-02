@@ -24,7 +24,7 @@ return {
       },
     },
     formatters_by_ft = {
-      eruby = { "tailwindcss_class_sorter_erb", "erb_format" },
+      eruby = { "erb_format" },
       html = { "topiary" },
       query = { "topiary" },
       toml = { "topiary" },
