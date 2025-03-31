@@ -1,6 +1,5 @@
 return {
   "nvim-treesitter/nvim-treesitter",
-  main = "nvim-treesitter.configs",
   build = ":TSUpdate",
   dependencies = {
     {
@@ -12,6 +11,19 @@ return {
     },
     "nvim-treesitter/nvim-treesitter-textobjects",
   },
+  config = function(_, opts)
+    local parser_config = require("nvim-treesitter.parsers").get_parser_configs()
+    parser_config.d2 = {
+      install_info = {
+        url = "https://github.com/ravsii/tree-sitter-d2",
+        files = { "src/parser.c" },
+        branch = "main",
+      },
+      filetype = "d2",
+    }
+
+    require("nvim-treesitter.configs").setup(opts)
+  end,
   opts = {
     ensure_installed = {
       -- Default languages
@@ -27,6 +39,7 @@ return {
       "bibtex",
       "cpp",
       "css",
+      "d2",
       "dockerfile",
       "embedded_template",
       "git_config",
@@ -35,7 +48,7 @@ return {
       "gomod",
       "gosum",
       "html",
-      "latex",
+      -- "latex",
       "java",
       "javascript",
       "json",
@@ -46,6 +59,7 @@ return {
       "rust",
       "scss",
       "sql",
+      "templ",
       "toml",
       "typescript",
       "xml",
