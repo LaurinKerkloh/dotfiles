@@ -3,7 +3,7 @@ export TERMINAL=alacritty
 export EDITOR=nvim
 export VISUAL=nvim
 
-export QT_QPA_PLATFORMTHEME=qt5ct
+export QT_STYLE_OVERRIDE=kvantum
 
 # TexLive
 export MANPATH="$MANPATH:/usr/local/texlive/2023/texmf-dist/doc/man"
