@@ -86,6 +86,10 @@ return {
         settings = {
           tailwindCSS = vim.tbl_extend("force",
             require("lspconfig.configs.tailwindcss").default_config.settings.tailwindCSS, {
+              experimental = {
+                configFile = "app/assets/tailwind/application.css",
+                classRegex = { [[\bclass:\s*'([^']*)']], [[\bclass:\s*\"([^"]*)"]] },
+              },
               includeLanguages = {
                 rust = "html",
                 templ = "html",
