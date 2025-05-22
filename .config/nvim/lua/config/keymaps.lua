@@ -22,6 +22,3 @@ vim.keymap.set("v", "<M-k>", ":m '<-2<cr>gv=gv")
 -- Navigate quickfix
 vim.keymap.set("n", "<C-M-j>", "<cmd>cnext<cr>zz")
 vim.keymap.set("n", "<C-M-k>", "<cmd>cprev<cr>zz")
-
--- tmux-sessionizer
-vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux new-window tmux-sessionizer<cr>")
