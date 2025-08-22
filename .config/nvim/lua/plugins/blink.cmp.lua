@@ -1,12 +1,16 @@
 return {
-  "saghen/blink.cmp",
-  version = "1.*",
-  opts = {
-    keymap = {
-      preset = "default",
+    "saghen/blink.cmp",
+    version = "1.*",
+    lazy = false,
+    opts = {
+        keymap = {
+            preset = "default",
+        },
+        signature = {
+            enabled = true,
+        },
+        sources = {
+            default = { "lsp", "path", "buffer" },
+        },
     },
-    signature = {
-      enabled = true,
-    },
-  },
 }
