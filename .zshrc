@@ -107,11 +107,18 @@ bindkey -v
 # Other key bindings
 
 # tmux-sessionizer
-tmux-sessionizer-widget() { 
+tmux-sessionizer-widget() {
     tmux-sessionizer
 }
 zle -N tmux-sessionizer-widget
 bindkey ^f tmux-sessionizer-widget
+
+# tmux-windowizer
+tmux-windowizer-widget() {
+    tmux-windowizer <>$TTY
+}
+zle -N tmux-windowizer-widget
+bindkey ^g tmux-windowizer-widget
 
 # Prompt
 eval "$(starship init zsh)"
