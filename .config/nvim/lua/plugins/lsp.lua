@@ -9,7 +9,7 @@ return {
         ensure_installed = {
             "docker_compose_language_service",
             "dockerls",
-            "herb_ls",
+            -- "herb_ls",
             "lua_ls",
             "ruby_lsp",
             "tailwindcss",
@@ -37,8 +37,10 @@ return {
         vim.lsp.config("herb_ls", {
             filetypes = { "html", "eruby" },
         })
+        vim.lsp.enable("herb_ls")
 
         vim.lsp.config("ruby_lsp", {
+            filetypes = { "ruby" },
             init_options = {
                 formatter = "rubocop",
                 linters = {
