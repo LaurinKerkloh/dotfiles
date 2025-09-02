@@ -12,9 +12,9 @@
 [init]
     defaultbranch = main
 [maintenance]
-    repo = /home/jole/.dotfiles
-    repo = /home/jole/code/arch
-    repo = /home/jole/code/reditus/intern
+    repo = /home/laurin/.dotfiles
+    repo = /home/laurin/code/arch
+    repo = /home/laurin/code/reditus/intern
 [pull]
     rebase = false
 [push]
@@ -27,5 +27,5 @@
 [tag]
     sort = version:refname
 [user]
-    name = Jonas Weber
-    email = jonas@jole.dev
+    name = Laurin Kerkloh
+    email = laurin@kerk-loh.de
