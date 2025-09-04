@@ -14,7 +14,7 @@
     },
     "temperature": {
         "interval": 1,
-        "hwmon-path": "/sys/devices/platform/nct6775.656/hwmon/hwmon6/temp13_input",
+        "hwmon-path": "/sys/devices/platform/nct6775.656/hwmon/hwmon3/temp13_input",
         "format": " {temperatureC}°C"
     },
     "battery": {
@@ -37,7 +37,9 @@
         }
     },
     "backlight": {
-        "device": "intel_backlight",
+        "on-scroll-up": "brightness brighter",
+        "on-scroll-down": "brightness darker",
+        "smooth-scrolling-threshold": 5,
         "format": "{icon}  {percent}%",
         "format-icons": ["", "", "", "", "", "", "", "", ""],
         "tooltip": false
