@@ -35,7 +35,6 @@ configuration {
 }
 
 element {
-    border-radius: 8px;
     color: @overlay0;
     padding: 8px;
     spacing: 16px;
@@ -69,11 +68,9 @@ window {
     background-color: @crust;
     border: 2px solid;
     border-color: @lavender;
-    border-radius: 16px;
 }
 mainbox {
     margin: 8px;
-    border-radius: 16px;
 }
 message {}
 textbox {}
@@ -84,7 +81,6 @@ listview {
 }
 scrollbar {
     margin: 0 8px 0 0;
-    handle-rounded-corners: true;
 }
 sidebar {}
 button {}
@@ -96,7 +92,6 @@ inputbar {
     margin: 8px 8px 16px 8px;
     background-color: @mantle;
     color: @subtext1;
-    border-radius: 8px;
     padding: 8px;
     border: 1px solid;
     border-color: @subtext1;
