@@ -54,7 +54,7 @@ window-position=(0, 0)
 window-size=(1900, 951)
 
 [org/blueman/plugins/recentconns]
-recent-connections=[{'adapter': 'B4:0E:DE:F7:BB:55', 'address': '80:95:3A:C3:60:2E', 'alias': 'JOLEPODS - Find My', 'icon': 'audio-headphones', 'name': 'Audio and input profiles', 'uuid': '00000000-0000-0000-0000-000000000000', 'time': '1769152295.1432254', 'device': '/org/bluez/hci0/dev_80_95_3A_C3_60_2E'}, {'adapter': 'B4:0E:DE:F7:BB:55', 'address': '2C:76:00:BE:BE:CE', 'alias': "Laurin's AirPods Pro", 'icon': 'audio-headphones', 'name': 'Audio and input profiles', 'uuid': '00000000-0000-0000-0000-000000000000', 'time': '1769152310.2324312', 'device': '/org/bluez/hci0/dev_2C_76_00_BE_BE_CE'}]
+recent-connections=[{'adapter': 'B4:0E:DE:F7:BB:55', 'address': '80:95:3A:C3:60:2E', 'alias': 'JOLEPODS - Find My', 'icon': 'audio-headphones', 'name': 'Audio and input profiles', 'uuid': '00000000-0000-0000-0000-000000000000', 'time': '1769152475.2036974', 'device': '/org/bluez/hci0/dev_80_95_3A_C3_60_2E'}, {'adapter': 'B4:0E:DE:F7:BB:55', 'address': '2C:76:00:BE:BE:CE', 'alias': "Laurin's AirPods Pro", 'icon': 'audio-headphones', 'name': 'Audio and input profiles', 'uuid': '00000000-0000-0000-0000-000000000000', 'time': '1769152310.2324312', 'device': '/org/bluez/hci0/dev_2C_76_00_BE_BE_CE'}]
 
 [org/blueman/plugins/autoconnect]
 services=[('80:95:3A:C3:60:2E', '00000000-0000-0000-0000-000000000000')]

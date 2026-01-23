@@ -15,6 +15,12 @@ return {
             "lua", "vim", "vimdoc", "query", "markdown", "markdown_inline",
             "ruby", "embedded_template", "html", "css", "javascript", "dockerfile", "yaml",
         },
+        highlight = {
+            enable = true,
+            disable = {
+                "csv",
+            },
+        },
         sync_install = false,
         auto_install = true,
         incremental_selection = {

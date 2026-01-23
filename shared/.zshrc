@@ -3,6 +3,7 @@
 
 # PATH
 PATH="$HOME/.local/bin:$PATH"
+PATH="$HOME/go/bin:$PATH"
 
 # History
 HISTFILE=~/.zsh_history
@@ -97,8 +98,8 @@ autoload -Uz up-line-or-beginning-search down-line-or-beginning-search
 zle -N up-line-or-beginning-search
 zle -N down-line-or-beginning-search
 
-[[ -n "${key[Up]}"   ]] && bindkey -- "${key[Up]}"   up-line-or-beginning-search
-[[ -n "${key[Down]}" ]] && bindkey -- "${key[Down]}" down-line-or-beginning-search
+bindkey '^P' up-line-or-history
+bindkey '^N' down-line-or-history
 
 key[Control-Left]="${terminfo[kLFT5]}"
 key[Control-Right]="${terminfo[kRIT5]}"
@@ -121,7 +122,7 @@ alias cat=bat
 alias -g -- -h='-h 2>&1 | bat --language=help --style=plain'
 alias -g -- -help='-help 2>&1 | bat --language=help --style=plain'
 alias -g -- --help='--help 2>&1 | bat --language=help --style=plain'
-export MANPAGER="sh -c 'sed -u -e \"s/\\x1B\[[0-9;]*m//g; s/.\\x08//g\" | bat -p -lman'"
+export MANPAGER="bat -plman"
 
 # fzf
 source <(fzf --zsh)
