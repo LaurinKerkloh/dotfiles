@@ -12,7 +12,9 @@ return {
         default_format_opts = {
             lsp_format = "fallback",
         },
-        format_on_save = {},
+        format_on_save = {
+            timeout_ms = 5000,
+        },
         formatters = {
             tailwindcss_class_sorter_erb = {
                 command = "node_modules/.bin/tailwindcss-class-sorter-erb",
