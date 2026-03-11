@@ -120,10 +120,14 @@ tmux-windowizer-widget() {
 zle -N tmux-windowizer-widget
 bindkey ^g tmux-windowizer-widget
 
+# mise
+eval "$(mise activate zsh)"
+
 # Prompt
 eval "$(starship init zsh)"
 
 # Always start tmux if we are not in tmux
 if [ "$TMUX" = "" ]; then
+    tmux
     tmux-sessionizer ~
 fi
