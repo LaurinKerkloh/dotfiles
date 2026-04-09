@@ -10,7 +10,7 @@ return {
             "docker_compose_language_service",
             "dockerls",
             "gopls",
-            -- "herb_ls",
+            "herb_ls",
             "lua_ls",
             "ruby_lsp",
             "tailwindcss",
