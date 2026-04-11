@@ -1,0 +1,9 @@
+[Desktop Entry]
+Version=1.0
+Name=WhatsApp Web
+Comment=WhatsApp Web
+Exec=chromium --new-window --app=https://web.whatsapp.com
+Terminal=false
+Type=Application
+Icon=~/.local/share/applications/icons/whatsapp.png
+StartupNotify=true

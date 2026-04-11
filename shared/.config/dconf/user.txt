@@ -51,7 +51,7 @@ sort-directories-first=false
 sort-order='ascending'
 type-format='category'
 window-position=(0, 0)
-window-size=(1274, 1346)
+window-size=(1274, 1340)
 
 [org/blueman/plugins/recentconns]
 recent-connections=[{'adapter': 'B4:0E:DE:F7:BB:55', 'address': '80:95:3A:C3:60:2E', 'alias': 'JOLEPODS - Find My', 'icon': 'audio-headphones', 'name': 'Audio and input profiles', 'uuid': '00000000-0000-0000-0000-000000000000', 'time': '1774950681.5895522', 'device': '/org/bluez/hci0/dev_80_95_3A_C3_60_2E'}, {'adapter': 'B4:0E:DE:F7:BB:55', 'address': '2C:76:00:BE:BE:CE', 'alias': "Laurin's AirPods Pro", 'icon': 'audio-headphones', 'name': 'Audio and input profiles', 'uuid': '00000000-0000-0000-0000-000000000000', 'time': '1774956566.1358957', 'device': '/org/bluez/hci0/dev_2C_76_00_BE_BE_CE'}]
@@ -61,3 +61,10 @@ services=[('80:95:3A:C3:60:2E', '00000000-0000-0000-0000-000000000000')]
 
 [org/gtk/settings/color-chooser]
 selected-color=(true, 1.0, 1.0, 1.0, 1.0)
+
+[apps/seahorse/listing]
+keyrings-selected=['secret-service:///org/freedesktop/secrets/collection/Default_5fkeyring']
+
+[apps/seahorse/windows/key-manager]
+width=1274
+height=1340
