@@ -6,5 +6,5 @@ compile = false
 
 [tools]
 node = "latest"
-ruby = "latest"
+ruby = "3"
 usage = "latest"
