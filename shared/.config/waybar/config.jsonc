@@ -3,9 +3,7 @@
     "layer": "top",
     "position": "top",
     "modules-left": [
-        "hyprland/workspaces"
-    ],
-    "modules-center": [
+        "hyprland/workspaces",
         "custom/monocle_windows"
     ],
     "modules-right": [
@@ -25,7 +23,7 @@
     },
     "custom/monocle_windows": {
         "exec": "~/.config/waybar/monocle_windows.sh $WAYBAR_OUTPUT_NAME",
-        "interval": 0.5,
+        "interval": 2,
         "return-type": "json",
         "markup": "pango",
         "format": "{}"

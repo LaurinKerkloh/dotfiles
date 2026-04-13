@@ -32,7 +32,7 @@ hyprctl clients -j | jq -r -c \
 | {
     text: (
       map(
-        (.title[0:20] + (if (.title | length) > 20 then "..." else "" end)) as $t
+        (.title[0:30] + (if (.title | length) > 30 then "..." else "" end)) as $t
         | if .focusHistoryID == $min then
             "<span foreground=\"#b4befe\">" + $t + "</span>"
           else
