@@ -3,8 +3,7 @@
     "layer": "top",
     "position": "top",
     "modules-left": [
-        "hyprland/workspaces",
-        "custom/monocle_windows"
+        "hyprland/workspaces"
     ],
     "modules-right": [
         "cpu",
@@ -20,13 +19,6 @@
     "hyprland/workspaces": {
         "sort-by-number": true,
         "format": "{name}"
-    },
-    "custom/monocle_windows": {
-        "exec": "~/.config/waybar/monocle_windows.sh $WAYBAR_OUTPUT_NAME",
-        "interval": 2,
-        "return-type": "json",
-        "markup": "pango",
-        "format": "{}"
     },
     "cpu": {
         "interval": 1,

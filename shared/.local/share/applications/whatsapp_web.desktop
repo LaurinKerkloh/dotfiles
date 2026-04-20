@@ -7,3 +7,4 @@ Terminal=false
 Type=Application
 Icon=~/.local/share/applications/icons/whatsapp.png
 StartupNotify=true
+StartupWMClass=whatsapp
