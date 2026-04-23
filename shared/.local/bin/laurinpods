@@ -1,0 +1,9 @@
+#!/bin/bash
+
+set -e
+
+if bluetoothctl info 2C:76:00:BE:BE:CE | grep -q 'Connected: no'; then
+    bluetoothctl connect 2C:76:00:BE:BE:CE
+else
+    bluetoothctl disconnect 2C:76:00:BE:BE:CE
+fi
