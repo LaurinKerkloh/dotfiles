@@ -86,7 +86,7 @@
     },
     "pulseaudio": {
         "scroll-step": 5,
-        "smooth-scrolling-threshold": 5,
+        "smooth-scrolling-threshold": 1,
         "format": "{icon}  {volume}%",
         "format-muted": "",
         "format-icons": {
@@ -103,7 +103,7 @@
         "timezone": "Europe/Berlin",
         "format": "{:%d.%m.%Y %H:%M:%S}",
         "tooltip": false,
-        "interval": 1,
+        "interval": 1
     },
     "bluetooth": {
         "on-click": "blueman-manager",
