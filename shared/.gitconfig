@@ -29,3 +29,5 @@
 [user]
     name = Laurin Kerkloh
     email = laurin@kerk-loh.de
+[includeIf "gitdir:~/code/nerou/**"]
+    path = ~/code/nerou/.gitconfig
