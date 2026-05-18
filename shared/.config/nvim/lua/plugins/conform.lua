@@ -7,6 +7,7 @@ return {
             json = { "prettier" },
             templ = { "prettier", lsp_format = "last" },
             typescript = { "prettier" },
+            yaml = { "prettier" },
         },
         default_format_opts = {
             lsp_format = "fallback",
