@@ -5,6 +5,7 @@ return {
             css = { "prettier" },
             javascript = { "prettier" },
             json = { "prettier" },
+            php = { "phpcbf" },
             templ = { "prettier", lsp_format = "last" },
             typescript = { "prettier" },
             yaml = { "prettier" },
