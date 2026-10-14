@@ -1,0 +1,34 @@
+#!/usr/bin/env bash
+set -e
+
+display="${1:-1}"
+
+dp=0f
+hdmi=11
+
+lock_dir="${XDG_RUNTIME_DIR:-/tmp}"
+lock_file="${lock_dir}/monitor-input.lock"
+
+exec 200>"$lock_file"
+flock -n 200 || exit 0
+
+notify() {
+    notify-send --expire-time=2000 "$1"
+}
+
+current=$(ddcutil --display "$display" getvcp 60 |
+    grep -oP 'sl=0x\K[0-9a-f]+')
+
+if [[ -z "$current" ]]; then
+    notify "Display ${display}: could not read input source"
+    exit 1
+fi
+
+if [[ "$current" == "$dp" ]]; then
+    target=$hdmi name="HDMI-1"
+else
+    target=$dp name="DisplayPort-1"
+fi
+
+notify "Display ${display}: switching to ${name}"
+ddcutil --display "$display" setvcp 60 "0x${target}"
